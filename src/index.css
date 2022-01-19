@@ -1,13 +1,64 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: "digits";
+        /* src: url("fonts/Segment7-4Gml.otf") format("opentype"); */
+    }
+
+    html,
+    body {
+        @apply dark:bg-gray-800 dark:text-gray-200 text-gray-800;
+        @apply block relative h-full m-0 p-0 overflow-hidden;
+
+        -ms-touch-action: none;
+        -webkit-touch-callout: none;
+        -ms-content-zooming: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+
+        -webkit-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    }
+
+    #root {
+      @apply flex flex-col w-full h-full;
+    }
+
+    ul {
+      @apply p-0 m-0;
+    }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .text-primary {
+    @apply dark:text-yellow-400 text-blue-600;
+  }
+
+  .text-light {
+    @apply dark:text-gray-600 text-gray-400;
+  }
+
+  .border-primary {
+    @apply dark:border-yellow-400 border-blue-600;
+  }
+
+  .text-secondary {
+    @apply dark:text-green-400 text-red-600;
+  }
+
+  .border-secondary {
+    @apply dark:border-green-400 border-red-600;
+  }
+
+  .MulBackdrop-root {
+    @apply backdrop-filter backdrop-blur-sm bg-transparent;
+  }
+
 }
